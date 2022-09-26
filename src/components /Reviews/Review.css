@@ -1,0 +1,15 @@
+img {
+  width: 250px;
+  border-radius: 250px;
+}
+
+.reviewCard {
+  background-color: rgb(8, 8, 47);
+}
+h3 {
+  color: aliceblue;
+}
+
+p {
+  color: rgb(247, 246, 245);
+}
