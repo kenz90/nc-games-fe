@@ -1,0 +1,21 @@
+.header {
+  background-color: rgb(54, 86, 130);
+  color: white;
+  margin: 0;
+}
+h1 {
+  margin: 0;
+  padding-left: 10px;
+}
+.options {
+  display: flex;
+  justify-content: center;
+}
+.options > a {
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+
+  margin: 0px 15px 0px 15px;
+}
