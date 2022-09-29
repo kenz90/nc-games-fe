@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../../utils/axios";
 import Review from "../Review/Review";
-import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import Categories from "../Categories/Categories";
 
 function Reviews() {
@@ -12,6 +12,7 @@ function Reviews() {
   const { category_name } = useParams();
   console.log(category_name);
   useEffect(() => {
+    setLoading(true);
     getReviews(category_name).then((reviews) => {
       setReviews(reviews);
       setLoading(false);
