@@ -1,0 +1,15 @@
+.catbox {
+  background-color: lightblue;
+  border: 3px solid rgb(7, 7, 79);
+  margin: 5px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.cats {
+  display: flex;
+  justify-content: space-around;
+}
