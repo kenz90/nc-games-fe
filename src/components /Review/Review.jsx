@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Review.css";
 
 function Review({ review }) {
@@ -11,6 +12,9 @@ function Review({ review }) {
         <br />
         {review.votes}
       </p>
+      <Link to={`/reviews/${review.review_id}`}>
+        <button>click for more </button>
+      </Link>
     </div>
   );
 }

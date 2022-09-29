@@ -7,10 +7,9 @@ import Categories from "../Categories/Categories";
 function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
-  const { search } = useLocation();
 
   const { category_name } = useParams();
-  console.log(category_name);
+
   useEffect(() => {
     setLoading(true);
     getReviews(category_name).then((reviews) => {
