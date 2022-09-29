@@ -4,8 +4,8 @@ const apiUrl = axios.create({
   baseURL: "https://nc-fe-proj.herokuapp.com/api",
 });
 
-export const getReviews = (catName) => {
-  return apiUrl.get(`/reviews?category=${catName}`).then(({ data }) => {
+export const getReviews = (category) => {
+  return apiUrl.get("/reviews", { params: { category } }).then(({ data }) => {
     return data.reviews;
   });
 };

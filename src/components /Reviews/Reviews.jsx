@@ -1,29 +1,33 @@
 import { useEffect, useState } from "react";
 import { getReviews } from "../../utils/axios";
 import Review from "../Review/Review";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams, useSearchParams } from "react-router-dom";
+import Categories from "../Categories/Categories";
 
 function Reviews() {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(false);
   const { search } = useLocation();
-  const categoriesNameSearch = search.slice(10, search.length);
 
+  const { category_name } = useParams();
+  console.log(category_name);
   useEffect(() => {
-    setLoading(true);
-    getReviews(categoriesNameSearch).then((reviews) => {
+    getReviews(category_name).then((reviews) => {
       setReviews(reviews);
       setLoading(false);
     });
-  }, [categoriesNameSearch]);
+  }, [category_name]);
+
+  if (loading) {
+    return <h1>"loading..."</h1>;
+  }
 
   return (
     <div>
-      {loading
-        ? "loading..."
-        : reviews.map((review) => (
-            <Review key={review.review_id} review={review} />
-          ))}
+      <Categories />
+      {reviews.map((review) => (
+        <Review key={review.review_id} review={review} />
+      ))}
     </div>
   );
 }

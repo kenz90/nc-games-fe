@@ -10,9 +10,13 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Header />
-        <Categories />
+
         <Routes>
           <Route path="/reviews" element={<Reviews />} />
+          <Route
+            path="/reviews/categories/:category_name"
+            element={<Reviews />}
+          />
         </Routes>
       </div>
     </BrowserRouter>
