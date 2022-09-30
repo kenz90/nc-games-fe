@@ -24,7 +24,6 @@ function Reviews() {
 
   return (
     <div>
-      <Categories />
       {reviews.map((review) => (
         <Review key={review.review_id} review={review} />
       ))}
