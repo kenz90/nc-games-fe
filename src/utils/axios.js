@@ -15,3 +15,10 @@ export const getCategories = () => {
     return data.categories;
   });
 };
+
+export const getIndividualReview = (id) => {
+  return apiUrl.get(`/reviews/${id}`).then(({ data }) => {
+    console.log(data);
+    return data.review;
+  });
+};
